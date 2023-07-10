@@ -148,6 +148,7 @@ public class JobScheduler : IDisposable{
     public void Dispose() {
 
         CancellationTokenSource.Cancel(false);
+        Event.Set();
         Event.Dispose();
         
         QueuedJobs.Clear();
